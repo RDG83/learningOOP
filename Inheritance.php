@@ -1,9 +1,7 @@
 <?php
 
-
 require_once "Company.php";
 require_once "Employee.php";
-
 
 $company1 = new Company("Apple", "California");
 $company2 = new Company("Google", "California");
