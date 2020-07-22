@@ -1,17 +1,35 @@
 <?php
 class File
 {
-    function displayFile($fileName)
+
+    public $file;
+    public $handle;
+
+    function __construct($file)
     {
-        try {
-            $content = file_get_contents($fileName);
-            return $content;
-        } catch (Exception $e) {
-            echo "Something went wrong" . $e->getMessage();
+
+        if (file_exists($file)) {
+            $this->handle = fopen($file, "r");
+            $this->file = $file;
+        } else {
+            echo "File not found, enter a valid file name.";
+        }
+    }
+
+    function getContent()
+    {
+        echo file_get_contents($this->file);
+    }
+
+    function __destruct()
+    {
+        if (isset($this->handle)) {
+            fclose($this->handle);
+            echo "File closed";
         }
     }
 }
 
-$file1 = new File;
+$file = new File("test.txt");
 
-echo $file1->displayFile("test.txt");
+$file->getContent();

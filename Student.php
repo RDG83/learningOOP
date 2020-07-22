@@ -4,11 +4,13 @@ class Student
 {
     public $firstName;
     public $lastName;
+    public $age;
 
-    function __construct($firstName, $lastName)
+    function __construct(array $params = array())
     {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+        $this->firstName = $params["firstname"];
+        $this->lastName = $params["lastname"];
+        $this->age = $params["age"];
     }
 
     function hello()
@@ -17,8 +19,8 @@ class Student
     }
 }
 
-
-$student1 = new Student("Jaap", "de Vries");
+$params = ["firstname" => "Paul", "lastname" => "de Wit", "age" => 26];
+$student1 = new Student($params);
 
 var_dump($student1);
 
