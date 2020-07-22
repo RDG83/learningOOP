@@ -7,7 +7,7 @@ class File
             $content = file_get_contents($fileName);
             return $content;
         } catch (Exception $e) {
-            echo "Something went wring" . $e->getMessage();
+            echo "Something went wrong" . $e->getMessage();
         }
     }
 }
