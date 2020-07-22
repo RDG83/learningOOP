@@ -2,7 +2,7 @@
 
 class Company
 {
-    public $companyName;
+    protected $companyName;
     public $companyAddress;
 
     function __construct($name, $address)
