@@ -1,5 +1,9 @@
 <?php
 
+// ********************
+// *****PROCEDURAL*****
+// ********************
+
 require_once "Database.php";
 
 $db = new Database();
@@ -13,8 +17,8 @@ echo $db->isConnected() ? "Connected" : "Not connected";
 
 // SHOW ALL
 
-// $db->query("SELECT * FROM `posts`");
-// var_dump($db->resultset());
+$db->query("SELECT * FROM `posts`");
+var_dump($db->resultset());
 
 // SHOW ONE
 
@@ -34,3 +38,7 @@ echo $db->isConnected() ? "Connected" : "Not connected";
 // $db->execute();
 // $db->query("SELECT * FROM `posts`");
 // var_dump($db->resultset());
+
+// *************
+// *****OOP*****
+// *************

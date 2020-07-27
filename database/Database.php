@@ -33,6 +33,7 @@ class Database
 
     public function getError()
     {
+        return $this->error;
     }
 
     public function isConnected()
