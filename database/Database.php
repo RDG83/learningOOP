@@ -24,8 +24,10 @@ class Database
 
         try {
             $this->connection = new PDO($dsn, $this->user, $this->password, $options);
+            $this->dbconnected = true;
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
+            $this->dbconnected = false;
         }
     }
 
